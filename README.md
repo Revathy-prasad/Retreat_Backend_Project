@@ -15,7 +15,7 @@ This project is a web application for booking retreats. Users can search for ret
 * Javascript
 
 **Installation:**
-1. Clone the repository: ` `
+1. Clone the repository: `git@github.com:Revathy-prasad/Retreat_Backend_Project.git`
 2. Create a virtual environment: `python -m venv myvenv`
 3. Activate the virtual environment:  `myvenv\Scripts\activate` on Windows
 4. Install dependencies: `pip install (needed libraries) `
