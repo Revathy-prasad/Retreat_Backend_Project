@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Your Wellness Journey</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='retreatpage.css') }}">
+</head>
+<body>
+  <h1>Explore Your Wellness Journey</h1>
+  <section class="search">
+    <div class="search-bar">
+      <form action="/search" method="POST">
+          <input type="text" name="search" placeholder="Search by retreat type or location">
+          <button type="submit">Search</button>
+      </form>
+  </div>
+  </section>
+  <section class="retreats">
+    {% for retreat in retreats %}
+      <div class="retreat-card">
+        <img src="{{ retreat.image }}" alt="{{ retreat.title }}" class="retreat-image">
+        <h2>{{ retreat.title }}</h2>
+        <p>{{ retreat.description }}</p>
+        <p>Location: {{ retreat.location }}</p>
+        <p>Price: {{ retreat.price }}</p>
+        <a href="{{ url_for('book_retreat', retreat_id=retreat.id) }}" class="book-button">Book Now</a>
+      </div>
+    {% endfor %}
+  </section>
+</body>
+</html>
